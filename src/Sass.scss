@@ -1,0 +1,48 @@
+
+@import 'mixins';
+@import 'override';
+@import 'animate';
+body{
+    font-family: 'Montserrat', sans-serif;;
+}
+h1{
+    font-size:40px;
+}
+h1, h2, h3{
+    @extend .text-uppercase;
+}
+.section{
+    @include padding-section;
+}
+.who{
+    @extend .text-light, .border-left, .border-light, .p-2;
+    animation: fadeIn 2s ease-out forwards;
+}
+.dropdown{
+    animation: dropdown .3s linear forwards;
+    opacity:0;
+}
+.dd-1{
+    animation-delay:2s
+}
+.dd-2{
+    animation-delay:2.2s
+}
+.dd-3{
+    animation-delay:2.4s
+}
+.dd-4{
+    animation-delay:2.6s
+}
+.dd-menu:nth-child(2n+1){
+    @extend .bg-light;
+}
+@keyframes dropdown{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+@import 'bootstrap';
